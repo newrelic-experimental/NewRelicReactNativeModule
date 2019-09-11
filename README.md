@@ -1,7 +1,7 @@
 ![](https://docs.newrelic.com/sites/default/files/thumbnails/image/mobile%402x.png)
 # New Relic React Native Modules SDK
 
-This is a module that exposes the Javascript environment to New Relic.  It is important to note that the Native New Relic SDK already collects Crashes, HTTP traffic, and other information becasue React-Native already uses the respective native components. This Module is an add on to the New Relic Native SDKs.
+This is a module that exposes the Javascript environment to New Relic.  It is important to note that the Native New Relic SDK already collects Crashes, HTTP traffic, and other information because React-Native already uses the respective native components. This Module is an add on to the New Relic Native SDKs.
 
 ### Assumptions
 - There is a working React Native application to monitor or at least a React-Native project setup.
@@ -31,8 +31,13 @@ There are three major areas that need to be addressed as part of the installatio
 2a. Point to Note React uses Objective C so use that install process to add SDK
 2b. Xcode may fail when running pod install.  If it does use *sudo xcode-select --switch /Applications/Xcode.app hen install pod again* then install pod again. This points to a differnt location for commandline tools.
 3. Add the code from the github.
-3a. Unzip, clone, or copy the files from the root of the project.  The directory structure is there and will copy the files into the correct place.
+3a. Unzip, clone, or copy the files to local system  The directory structure is there and will copy the files into the correct place.
+3b.Copy NewRelicRN.js and NewRelicAgentRN.js to the project root
+3c. Go to the ios folder and copy the rnnewrelic folder to the root of the IOS app
+3d. Go to the Android folder and copy the rnnewrelic folder to the same Android location see Image Below
 
+
+![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-11%20at%206.01.14%20PM.png)
 
 
 ####Javascript　
