@@ -16,31 +16,47 @@ Pass user information to New Relic to track user sessions.
 ### Functions
 
 nrlog(inError)
+
 nrerror(inError)
+
 nrwarning(inError)
+
 nrcritical(inError)
+
 nraddUserId(userId)
+
 nrinteraction(screen)
+
 
 ### Installation
 
 There are three major areas that need to be addressed as part of the installation.
 1. Install the New Relic Native Android SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/install-configure/install-android-apps-gradle-android-studio)
+
 1a. Please merge the gradle files not replace.
+
 2. Install the New Relic Native IOS SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/installation/cocoapods-installation)
+
 2a. Point to Note React uses Objective C so use that install process to add SDK
+
 2b. Xcode may fail when running pod install.  If it does use *sudo xcode-select --switch /Applications/Xcode.app hen install pod again* then install pod again. This points to a differnt location for commandline tools.
+
 3. Add the code from the github.
+
 3a. Unzip, clone, or copy the files to local system  The directory structure is there and will copy the files into the correct place.
+
 3b.Copy NewRelicRN.js and NewRelicAgentRN.js to the project root
+
 3c. Go to the ios folder and copy the rnnewrelic folder to the root of the IOS app
+
 3d. Go to the Android folder and copy the rnnewrelic folder to the same Android location see Image Below
+
 
 
 ![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-11%20at%206.01.14%20PM.png)
 
 
-####Javascript　
+####React Example　
 
 ```javascript
 import {createStackNavigator, createAppContainer} from 'react-navigation';
