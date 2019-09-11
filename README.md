@@ -56,7 +56,7 @@ There are three major areas that need to be addressed as part of the installatio
 ![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-11%20at%206.01.14%20PM.png)
 
 
-####React Example　
+#### React Example　
 
 ```javascript
 import {createStackNavigator, createAppContainer} from 'react-navigation';
