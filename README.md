@@ -6,6 +6,8 @@ This is a module that exposes the Javascript environment to New Relic.  It is im
 ### Assumptions
 - There is a working React Native application to monitor or at least a React-Native project setup.
 - A Mac is required for use the Xcode IDE
+- Access to a New Relic Account with either a trial or full license
+- Contact New Relic to have React Native Dashboards Added
 
 ### Features
 
@@ -39,7 +41,7 @@ There are three major areas that need to be addressed as part of the installatio
 
 2a. Point to Note React uses Objective C so use that install process to add SDK
 
-2b. Xcode may fail when running pod install.  If it does use *sudo xcode-select --switch /Applications/Xcode.app hen install pod again* then install pod again. This points to a differnt location for commandline tools.
+2b. Xcode may fail when running pod install.  If it does use *sudo xcode-select --switch /Applications/Xcode.app then install pod again* then install pod again. This points to a differnt location for commandline tools.
 
 3. Add the code from the github.
 
