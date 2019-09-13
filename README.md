@@ -35,27 +35,27 @@ nrinteraction(screen)
 There are three major areas that need to be addressed as part of the installation.
 1. Install the New Relic Native Android SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/install-configure/install-android-apps-gradle-android-studio)
 
-1a. Please merge the gradle files not replace.
+- Please merge the gradle files not replace.
 
-1b. Put newrelic.ApplicationToken in the MainApplication not the MainActivity.
+- Put newrelic.ApplicationToken in the MainApplication not the MainActivity.
 
-1c. Remove .getapplication() from the  newrelic.ApplicationToken line and leave this;
+- Remove .getapplication() from the  newrelic.ApplicationToken line and leave this;
 
 2. Install the New Relic Native IOS SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/installation/cocoapods-installation)
 
-2a. Point to Note React uses Objective C so use that install process to add SDK
+- Point to Note React uses Objective C so use that install process to add SDK
 
-2b. Xcode may fail when running pod install.  If it does use *sudo xcode-select --switch /Applications/Xcode.app then install pod again* then install pod again. This points to a differnt location for commandline tools.
+- Xcode may fail when running pod install.  If it does use *sudo xcode-select --switch /Applications/Xcode.app then install pod again* then install pod again. This points to a differnt location for commandline tools.
 
 3. Add the code from the github.
 
-3a. Unzip, clone, or copy the files to local system  Please review the directory structure.
+- Unzip, clone, or copy the files to local system  Please review the directory structure.
 
-3b.Copy NewRelicRN.js and NewRelicAgentRN.js to the project root
+- Copy NewRelicRN.js and NewRelicAgentRN.js to the project root
 
-3c. Go to the ios folder and copy the rnnewrelic folder to the root of the IOS app
+- Go to the ios folder and copy the rnnewrelic folder to the root of the IOS app
 
-3d. Go to the Android folder and copy the rnnewrelic folder to the same Android location see Image Below
+- Go to the Android folder and copy the rnnewrelic folder to the same Android location see Image Below
 
 
 
