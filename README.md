@@ -37,6 +37,10 @@ There are three major areas that need to be addressed as part of the installatio
 
 1a. Please merge the gradle files not replace.
 
+1b. Put newrelic.ApplicationToken in the MainApplication not the MainActivity.
+
+1c. Remove .getapplication() from the  newrelic.ApplicationToken line and leave this;
+
 2. Install the New Relic Native IOS SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/installation/cocoapods-installation)
 
 2a. Point to Note React uses Objective C so use that install process to add SDK
@@ -45,7 +49,7 @@ There are three major areas that need to be addressed as part of the installatio
 
 3. Add the code from the github.
 
-3a. Unzip, clone, or copy the files to local system  The directory structure is there and will copy the files into the correct place.
+3a. Unzip, clone, or copy the files to local system  Please review the directory structure.
 
 3b.Copy NewRelicRN.js and NewRelicAgentRN.js to the project root
 
