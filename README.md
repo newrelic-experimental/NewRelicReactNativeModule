@@ -47,7 +47,6 @@ After pasteing the NewRelic Code
 Should look like this after edit
 ![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-24%20at%209.26.21%20AM.png)
 
-https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-24%20at%209.13.52%20AM.png
 
 2. Install the New Relic Native IOS SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/installation/cocoapods-installation)
 
