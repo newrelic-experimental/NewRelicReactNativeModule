@@ -39,7 +39,15 @@ There are three major areas that need to be addressed as part of the installatio
 
 - Put newrelic.ApplicationToken in the MainApplication not the MainActivity.
 
+After pasteing the NewRelic Code
+![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-24%20at%209.13.26%20AM.png)
+
 - Remove .getapplication() from the  newrelic.ApplicationToken line and leave this;
+
+Should look like this after edit
+![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-24%20at%209.26.21%20AM.png)
+
+https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-24%20at%209.13.52%20AM.png
 
 2. Install the New Relic Native IOS SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/installation/cocoapods-installation)
 
