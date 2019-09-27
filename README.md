@@ -50,8 +50,6 @@ After pasteing the NewRelic Code
 Should look like this after edit
 ![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-24%20at%209.26.21%20AM.png)
 
-- As of version 6.0 the MainApplication.java was updated
-
 - Please add: import com.rnnewrelic.NewRelicPackage;
 
 - Update:  
