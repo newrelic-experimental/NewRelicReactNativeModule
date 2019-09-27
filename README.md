@@ -17,6 +17,9 @@ Pass user information to New Relic to track user sessions.
 
 ### Functions
 
+- inError is JavaScript exception
+- userId and screen are text
+
 nrlog(inError)
 
 nrerror(inError)
@@ -46,6 +49,22 @@ After pasteing the NewRelic Code
 
 Should look like this after edit
 ![](https://raw.githubusercontent.com/MichaelOsowski/NewRelicReactNativeModule/master/Screen%20Shot%202019-09-24%20at%209.26.21%20AM.png)
+
+- As of version 6.0 the MainApplication.java was updated
+
+- Please add: import com.rnnewrelic.NewRelicPackage;
+
+- Update:  
+```
+List<ReactPackage> packages = new PackageList(this).getPackages();
+          // Packages that cannot be autolinked yet can be added manually here, for example:
+          // packages.add(new MyReactNativePackage());
+		  //Add this line for New Rleic
+            packages.add(new NewRelicPackage());
+          return packages;
+```
+- To add New Relic to the Package Manager
+![](https://github.com/MichaelOsowski/NewRelicReactNativeModule/raw/master/Screen%20Shot%202019-09-26%20at%2010.19.13%20PM.png)
 
 
 2. Install the New Relic Native IOS SDK: [Link to Doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/installation/cocoapods-installation)
