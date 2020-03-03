@@ -22,6 +22,11 @@ export function nrInit(FirstScreen){
 }
 
 export function nrinteraction(screen){
+  console.log(screen)
   NewRelicAgentRN.interaction(screen);
 
+}
+
+export function nrRecordMetric(inEventType, inJson){
+  NewRelicAgentRN.RecordMetric(inEventType, JSON.stringify(inJson));
 }
