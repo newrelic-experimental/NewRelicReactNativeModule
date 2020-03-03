@@ -54,13 +54,6 @@ RCT_EXPORT_METHOD(logSend:(NSString *)loglevel message:(NSString *)message stack
   
    [NewRelic recordCustomEvent:@"RNError" attributes:nrdictionary];
   
-  
-  NSString *bob = @"Dingo";
-  bob = [bob stringByAppendingString:loglevel];
-        NSLog(bob);
-  
-  
-  
 }// end logSend
 RCT_EXPORT_METHOD(interaction:(NSString *)screen){
   [NewRelic recordCustomEvent:@"RNInteraction" attributes:@{@"Screen":screen}];
@@ -69,6 +62,23 @@ RCT_EXPORT_METHOD(nrInit:(NSString *)screen){
   [NewRelic recordCustomEvent:@"RNInteraction" attributes:@{@"Screen":screen}];
 }
 
+RCT_EXPORT_METHOD(RecordMetric:(NSString *)inEventType inJson:(NSString *)inJson){
+  NSData *jsonData = [inJson dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *error;
+  
+  id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+  
+  if (error) {
+      NSLog(@"Error parsing JSON: %@", error);
+  }
+  else
+  {
+          NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
+          BOOL eventRecorded = [NewRelic recordCustomEvent:inEventType attributes:jsonDictionary];
+  }
+  
+  
+}
 
 
 @end
