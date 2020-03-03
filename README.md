@@ -1,3 +1,4 @@
+
 ![](https://docs.newrelic.com/sites/default/files/thumbnails/image/mobile%402x.png)
 # New Relic React Native Modules SDK
 
@@ -31,6 +32,9 @@ nrcritical(inError)
 nraddUserId(userId)
 
 nrinteraction(screen)
+
+nrRecordMetric('mycustomeventtable',sampledata)
+sampledata is a Json
 
 
 ### Installation
@@ -78,6 +82,8 @@ List<ReactPackage> packages = new PackageList(this).getPackages();
 - Copy NewRelicRN.js and NewRelicAgentRN.js to the project root
 
 - Go to the ios folder and copy the rnnewrelic folder to the root of the IOS app
+	- May need to open the XCode and right click in the project
+	- Use Add files to add the Objective C files to the project.
 
 - Go to the Android folder and copy the rnnewrelic folder to the same Android location see Image Below
 
@@ -143,6 +149,15 @@ class HomeScreen extends React.Component {
   render() {
   // New Relic can add an interaction line to see what screens are dislayed
     nrinteraction("Welcome");
+  // Create Custom event tables in New Relic Insights  
+    var sampledata = {
+                'cityName': 'Philadelphia',
+                'zipCode': 19134,
+                'username': 'bob',
+                'alive': true
+              };
+    nrRecordMetric('mycustom',sampledata);
+
     const {navigate} = this.props.navigation;
     return (
       <Button
@@ -189,6 +204,7 @@ class DataScreen extends React.Component {
     render() {
 	// New Relic can add the user to collect what sessions are related to the user
       nraddUserId("bob");
+
 	   // New Relic can add an interaction line to see what screens are dislayed
       nrinteraction("Results");
       if(this.state.isLoading){
