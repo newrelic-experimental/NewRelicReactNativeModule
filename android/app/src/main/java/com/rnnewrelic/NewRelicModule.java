@@ -1,13 +1,17 @@
 package com.rnnewrelic;
-import android.widget.Toast;
+
+import android.util.Log;
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReadableMap;
 import com.newrelic.agent.android.NewRelic;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Date;
 import java.util.Map;
@@ -32,8 +36,6 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
     @Override
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();
-        constants.put(DURATION_SHORT_KEY, Toast.LENGTH_SHORT);
-        constants.put(DURATION_LONG_KEY, Toast.LENGTH_LONG);
         return constants;
     }
 
@@ -44,6 +46,54 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
         NewRelic.recordCustomEvent("RnUserId", localMap);
 
 
+    }
+    @ReactMethod
+    public void RecordMetric(String inEventType, String inJson){
+        JSONObject mainObject;
+        String jsonName = "";
+        String sometext;
+        Map attributes = new HashMap();
+        Double testnum = 1.0;
+        boolean numeric = false;
+
+        try {
+            mainObject = new JSONObject(inJson);
+            int recLength = mainObject.length();
+            if (recLength>0) {
+
+                JSONArray jsonArray = mainObject.names();
+                for (int i = 0; i < mainObject.length(); i++) {
+
+                    jsonName = jsonArray.getString(i);
+
+                    sometext = mainObject.getString(jsonName);
+
+
+                    try {
+                        testnum = Double.parseDouble(sometext);
+                    } catch (NumberFormatException e) {
+                        numeric = false;
+                    }
+
+                    if (numeric) {
+                        attributes.put(jsonName, testnum);
+                    } else if (sometext.equalsIgnoreCase("true")) {
+                        attributes.put(jsonName, "true");
+
+                    } else if (sometext.equalsIgnoreCase("false")) {
+                        attributes.put(jsonName, "false");
+                    } else {
+                        attributes.put(jsonName, sometext);
+                    }
+
+                }
+
+            }
+                NewRelic.recordCustomEvent(inEventType, attributes);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            NewRelic.recordHandledException(e);
+        }
     }
     @ReactMethod
     public void nrInit(String FirstScreen){
