@@ -1,32 +1,35 @@
-import NewRelicAgentRN from './NewRelicAgentRN.js';
+import NewRelicRNModule from './NewRelicRNModule.js';
 
-export function nrlog(inError){
-  NewRelicAgentRN.logSend("log",inError.message,inError.stack,inError.lineNumber,inError.fileName,inError.columnNumber,inError.name);
-}
-export function nrerror(inError){
-  NewRelicAgentRN.logSend("error",inError.message,inError.stack,inError.lineNumber,inError.fileName,inError.columnNumber,inError.name);
-}
-export function nrwarning(inError){
-  NewRelicAgentRN.logSend("warning",inError.message,inError.stack,inError.lineNumber,inError.fileName,inError.columnNumber,inError.name);
-}
-export function nrcritical(inError){
-  NewRelicAgentRN.logSend("critical",inError.message,inError.stack,inError.lineNumber,inError.fileName,inError.columnNumber,inError.name);
+export function nrInit(firstScreen){
+  NewRelicRNModule.nrInit(firstScreen);
 }
 
-export function nraddUserId(userId){
-  NewRelicAgentRN.addUserId(userId);
-}
-
-export function nrInit(FirstScreen){
-  NewRelicAgentRN.nrInit(FirstScreen);
-}
-
-export function nrinteraction(screen){
-  console.log(screen)
-  NewRelicAgentRN.interaction(screen);
-
+export function nrAddUserId(userId)X{x
+  NewRelicRNModule.addUserId(userId);
 }
 
 export function nrRecordMetric(inEventType, inJson){
-  NewRelicAgentRN.RecordMetric(inEventType, JSON.stringify(inJson));
+  NewRelicRNModule.recordMetric(inEventType, JSON.stringify(inJson));
 }
+
+export function nrInteraction(screen){
+  console.log(screen)
+  NewRelicRNModule.interaction(screen);
+}
+
+export function nrLog(inError){
+  NewRelicRNModule.logSend("log", inError.message, inError.stack, inError.lineNumber, inError.fileName, inError.columnNumber, inError.name);
+}
+
+export function nrError(inError){
+  NewRelicRNModule.logSend("error", inError.message, inError.stack, inError.lineNumber, inError.fileName, inError.columnNumber, inError.name);
+}
+
+export function nrWarning(inError){
+  NewRelicRNModule.logSend("warning", inError.message,inError.stack, inError.lineNumber, inError.fileName, inError.columnNumber, inError.name);
+}
+
+export function nrCritical(inError){
+  NewRelicRNModule.logSend("critical", inError.message, inError.stack, inError.lineNumber, inError.fileName, inError.columnNumber, inError.name);
+}
+
