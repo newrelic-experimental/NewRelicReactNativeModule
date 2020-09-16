@@ -30,7 +30,7 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "NewRelicAgentRN";
+        return "NewRelicRNModule";
     }
 
     @Override
@@ -131,6 +131,7 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
         }
 
         localMap.put("logLevel", loglevel);
+        localMap.put("platform", "andorid");
         NewRelic.recordCustomEvent("RNError", localMap);
     }
 

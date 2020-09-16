@@ -1,6 +1,6 @@
 #import "NewRelicModule.h"
 #import <Foundation/Foundation.h>
-#import "NewrelicAgent/NewRelic.h"
+#import "NewRelic/NewRelic.h"       // "NewRelicAgent/NewRelic.h" for versions < 7.0
 
 @implementation NewRelicModule
 
@@ -63,16 +63,14 @@ RCT_EXPORT_METHOD(logSend:(NSString *)loglevel message:(NSString *)message stack
     name = @"missing";
   }
 
-  id objects[] = {loglevel, message, stack, lineNumber,fileName, columnNumber,name};
-  id keys[] = {@"logLevel", @"message", @"stack", @"lineNumber",@"fileName" ,@"columnNumber",@"name"};
+  id objects[] = {loglevel, message, stack, lineNumber,fileName, columnNumber, name, @"ios"};
+  id keys[] = {@"logLevel", @"message", @"stack", @"lineNumber", @"fileName", @"columnNumber", @"name", @"platform"};
   NSUInteger count = sizeof(objects) / sizeof(id);
   NSDictionary *nrdictionary = [NSDictionary dictionaryWithObjects:objects
                                                          forKeys:keys
                                                            count:count];
 
    [NewRelic recordCustomEvent:@"RNError" attributes:nrdictionary];
-
 }
 
 @end
-
