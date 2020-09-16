@@ -18,9 +18,10 @@
 * Pass user information to New Relic to track user sessions
 
 ### Requirements
+- React Native 0.60
 - A working React Native application: use an existing project, or [create a new one](https://reactnative.dev/docs/getting-started): 
   
-  ``` npx react-native init NewRelicRNModuleTestApp```
+  ```npx react-native init NewRelicRNModuleTestApp```
 - Access to a New Relic account with either a trial or full license
   - ~~Contact New Relic to have React Native dashboards added~~
 - Mac hardware is required to use the Xcode IDE
@@ -28,7 +29,7 @@
 # Getting Started
 
 ### Add the repo code from GitHub
-* Unzip, clone, or copy this repo to a local workspace. Please review the directory structure.
+* Unzip, clone, or copy this repo to a local workspace. Please review the directory structure
 * Copy `NewRelicRN.js` and `NewRelicRNModule.js` from the local workspace to the app's root directory
 * Copy the `ios/rnnewrelic` folder from the local workspace to the app's `./ios` directory
 * Copy the `android/app/src/main/java/com` folder from the local workspace to the project's `android/app/src/main/java` directory
@@ -73,7 +74,7 @@ Screenshots of the project with [Android](./screenshots/Android_Install.png) and
 
 - From XCode, right-click the app project drop down in the workspace 
   - select `Add files to ...`
-  - add the `./rnnewrelic` folder copied from the local workspace.
+  - add the `./rnnewrelic` folder copied from the local workspace
   
 - Update the app's `AppDelegate.m` file: 
   - Ensure`APP_TOKEN` has been replaced with a valid New Relic application token when starting the agent
@@ -89,9 +90,6 @@ From the app's root directory, run:
 * `npm start`, then
 * `npx react-native run-ios` or
 * `npx react-native run-android`
-
-## Testing
->[TODO]
 
 # Usage
 The SDK provides a set of exported Javascript methods used to record app data. Use the [example app](#react-native-example) as a guide to use these API methods in your app:   
