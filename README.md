@@ -79,20 +79,17 @@ Screenshots of the project with [Android](./screenshots/Android_Install.png) and
 - Update the app's `AppDelegate.m` file: 
   - Ensure`APP_TOKEN` has been replaced with a valid New Relic application token when starting the agent
   
-### Javascript setup
-- Integrate [API calls](#usage) into the app's `App.js` file. Refer to [this example](./examples/App.js), or the [example provided below](#react-native-example).
-
 
 ## Building
 Follow the [guidance from React Native](https://reactnative.dev/docs/running-on-device) to build and deploy your app to an emulator, simulator or device.
 
 From the app's root directory, run:
-* `npm start`, then
+* `npx react-native start`, then
 * `npx react-native run-ios` or
 * `npx react-native run-android`
 
 # Usage
-The SDK provides a set of exported Javascript methods used to record app data. Use the [example app](#react-native-example) as a guide to use these API methods in your app:   
+The SDK provides a set of exported Javascript methods used to record app data. Integrate the API into the app's `App.js` file. Refer to [this example](./examples/App.js), or the [example provided below](#react-native-example).
 
 ### nrInit(firstScreen)
 > Call this to initialize the SDK. Pass a name of the app's landing screen as an argument. 
