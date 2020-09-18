@@ -30,7 +30,7 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "NewRelicAgentRN";
+        return "NewRelicRNModule";
     }
 
     @Override
@@ -40,15 +40,20 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void addUserId(String userId){
+    public void nrInit(String FirstScreen) {
+        timerDate = new Date();
+        LastScreen = FirstScreen;
+    }
+
+    @ReactMethod
+    public void addUserId(String userId) {
         Map localMap = new HashMap<>();
         localMap.put("UserId", userId);
         NewRelic.recordCustomEvent("RnUserId", localMap);
-
-
     }
+
     @ReactMethod
-    public void RecordMetric(String inEventType, String inJson){
+    public void recordMetric(String inEventType, String inJson) {
         JSONObject mainObject;
         String jsonName = "";
         String sometext;
@@ -59,15 +64,13 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
         try {
             mainObject = new JSONObject(inJson);
             int recLength = mainObject.length();
-            if (recLength>0) {
+            if (recLength > 0) {
 
                 JSONArray jsonArray = mainObject.names();
                 for (int i = 0; i < mainObject.length(); i++) {
 
                     jsonName = jsonArray.getString(i);
-
                     sometext = mainObject.getString(jsonName);
-
 
                     try {
                         testnum = Double.parseDouble(sometext);
@@ -79,60 +82,57 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
                         attributes.put(jsonName, testnum);
                     } else if (sometext.equalsIgnoreCase("true")) {
                         attributes.put(jsonName, "true");
-
                     } else if (sometext.equalsIgnoreCase("false")) {
                         attributes.put(jsonName, "false");
                     } else {
                         attributes.put(jsonName, sometext);
                     }
-
                 }
 
             }
-                NewRelic.recordCustomEvent(inEventType, attributes);
+            NewRelic.recordCustomEvent(inEventType, attributes);
         } catch (JSONException e) {
             e.printStackTrace();
             NewRelic.recordHandledException(e);
         }
     }
-    @ReactMethod
-    public void nrInit(String FirstScreen){
-        timerDate = new Date();
-        LastScreen = FirstScreen;
-    }
 
     @ReactMethod
-    public void interaction(String screen){
+    public void interaction(String screen) {
         Date now = new Date();
         long elapsedtime = now.getTime() - timerDate.getTime();
 
         Map attributes = new HashMap();
         attributes.put("Screen", screen);
-        attributes.put("duration",elapsedtime);
+        attributes.put("duration", elapsedtime);
         NewRelic.recordCustomEvent("RNInteraction", attributes);
     }
 
     @ReactMethod
-    public void logSend(String loglevel, String message,String stack,String lineNumber, String fileName, String columnNumber, String name) {
+    public void logSend(String loglevel, String message, String stack, String lineNumber, String fileName, String columnNumber, String name) {
         Map localMap = new HashMap<>();
+
         if (stack.length() > 0) {
             localMap.put("stack", stack);
         } else {
             localMap.put("stack", "No Trace");
         }
+
         if (name.length() > 0) {
             localMap.put("name", name);
         } else {
             localMap.put("name", "No Name");
         }
+
         if (message.length() > 0) {
             localMap.put("message", message);
         } else {
             localMap.put("message", "No Message");
         }
+
         localMap.put("logLevel", loglevel);
+        localMap.put("platform", "andorid");
         NewRelic.recordCustomEvent("RNError", localMap);
     }
-
 
 }

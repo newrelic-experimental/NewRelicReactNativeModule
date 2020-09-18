@@ -1,0 +1,20 @@
+{
+  "lastUpdated": "Thu Sep 15 2020 14:23:35 GMT+0000 (Coordinated Universal Time)",
+  "projectName": "newrelic-reactnative-bindings",
+  "projectUrl": "https://github.com/newrelic/NewRelicReactNativeModule",
+  "includeDev": true,
+  "dependencies": {
+    "react": "16.13.1",
+    "react-native@06.63.3": {
+      "name": "React Native",
+      "version": "06.63.3",
+      "licenses": "Apache-2.0",
+      "repoUrl": "https://github.com/facebook/react-native",
+      "versionedRepoUrl": "https://github.com/facebook/react-native/tree/0.6-stable",
+      "licenseFile": "LICENSE",
+      "licenseUrl": "https://github.com/facebook/react-native/blob/master/LICENSE",
+      "licenseTextSource": "file",
+      "publisher": "Facebook"
+    }
+  }
+}
