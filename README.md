@@ -352,7 +352,7 @@ nrInit('Home');
 
 export default App;
 ```
-## Support
+# Support
 
 New Relic has open-sourced this project. This project is provided AS-IS WITHOUT WARRANTY OR DEDICATED SUPPORT. Issues and contributions should be reported to the project here on GitHub.
 
@@ -360,12 +360,20 @@ We encourage you to bring your experiences and questions to the [Explorers Hub](
 
 ## Community
 
-New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices. Like all official New Relic open source projects, there's a related Community topic in the New Relic Explorers Hub.
+New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices. Like all official New Relic open source projects, there's a related Community topic in the New Relic Explorers Hub. You can find this project's topic/threads here:
 
-## Contributing
-We encourage your contributions to improve the React Native SDK! Keep in mind when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. You only have to sign the CLA one time per project.
-If you have any questions, or to execute our corporate CLA, required if your contribution is on behalf of a company,  please drop us an email at opensource@newrelic.com. Please review our [Contributors Guide](CONTRIBUTING.md).
+https://discuss.newrelic.com/tags/c/full-stack-observability/mobile-apm/reactnative
 
-## License
+## Issues / enhancement requests
+
+Issues and enhancement requests can be submitted in the [Issues tab of this repository](../../issues). Please search for and review the existing open issues before submitting a new issue.
+
+# Contributing
+
+Contributions are encouraged! If you submit an enhancement request, we'll invite you to contribute the change yourself. Please review our [Contributors Guide](CONTRIBUTING.md).
+
+Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource@newrelic.com.
+
+# License
 The React Native Modules SDK is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
 > The React Native Modules SDK also uses source code from third-party libraries. You can find full details on which libraries are used and the terms under which they are licensed in the third-party notices document.
