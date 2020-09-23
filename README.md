@@ -23,7 +23,6 @@
   
   ```npx react-native init NewRelicRNModuleTestApp```
 - Access to a New Relic account with either a trial or full license
-  - ~~Contact New Relic to have React Native dashboards added~~
 - Mac hardware is required to use the Xcode IDE
 
 # Getting Started
