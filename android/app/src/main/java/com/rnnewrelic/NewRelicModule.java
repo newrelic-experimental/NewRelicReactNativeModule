@@ -30,7 +30,7 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "NewRelicRNModule";
+        return "NewRelicModule";
     }
 
     @Override
