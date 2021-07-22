@@ -33,6 +33,14 @@ RCT_EXPORT_METHOD(interaction:(NSString *)screen){
   [NewRelic recordCustomEvent:@"RNInteraction" attributes:@{@"Screen":screen}];
 }
 
+RCT_EXPORT_METHOD(nrRecordMetricNumber:(NSString *)name catagory:(NSString *)catagory inValue:(double)inValue){
+  
+  NSNumber *number = [NSNumber numberWithDouble:inValue];
+  [NewRelic recordMetricWithName:(NSString *)name
+    category:(NSString *)catagory
+     value:(NSNumber *)number];
+}
+
 RCT_EXPORT_METHOD(logSend:(NSString *)loglevel message:(NSString *)message stack:(NSString *)stack lineNumber:(NSString *)lineNumber fileName:(NSString *)fileName columnNumber:(NSString *)columnNumber name:(NSString *)name)
 {
   if (loglevel == nil) {

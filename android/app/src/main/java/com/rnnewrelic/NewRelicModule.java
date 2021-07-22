@@ -30,8 +30,10 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "NewRelicRNModule";
+        return "NewRelicModule";
     }
+    Exception e = new Exception();
+
 
     @Override
     public Map<String, Object> getConstants() {
@@ -93,8 +95,19 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
             NewRelic.recordCustomEvent(inEventType, attributes);
         } catch (JSONException e) {
             e.printStackTrace();
+
             NewRelic.recordHandledException(e);
         }
+    }
+    @ReactMethod
+    public void nrRecordMetricNumber(String name, String catagory,double inValue){
+        NewRelic.recordMetric("Custom Metric Name","MyCategory", 1.0);
+        NewRelic.recordMetric(name,catagory,inValue);
+        Log.i("newrelic", String.valueOf(inValue));
+    }
+    @ReactMethod
+    public void applicationVersion(String appversion){
+        //NewRelic.withApplicationVersion(appversion);
     }
 
     @ReactMethod
