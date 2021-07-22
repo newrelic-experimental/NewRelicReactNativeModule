@@ -131,7 +131,7 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
         }
 
         localMap.put("logLevel", loglevel);
-        localMap.put("platform", "andorid");
+        localMap.put("platform", "android");
         NewRelic.recordCustomEvent("RNError", localMap);
     }
 
