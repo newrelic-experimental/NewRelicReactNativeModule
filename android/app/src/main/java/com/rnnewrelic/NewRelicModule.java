@@ -112,19 +112,19 @@ public class NewRelicModule extends ReactContextBaseJavaModule {
     public void logSend(String loglevel, String message, String stack, String lineNumber, String fileName, String columnNumber, String name) {
         Map localMap = new HashMap<>();
 
-        if (stack.length() > 0) {
+        if (stack != null && stack.length() > 0) {
             localMap.put("stack", stack);
         } else {
             localMap.put("stack", "No Trace");
         }
 
-        if (name.length() > 0) {
+        if (name != null && name.length() > 0) {
             localMap.put("name", name);
         } else {
             localMap.put("name", "No Name");
         }
 
-        if (message.length() > 0) {
+        if (message != null && message.length() > 0) {
             localMap.put("message", message);
         } else {
             localMap.put("message", "No Message");
